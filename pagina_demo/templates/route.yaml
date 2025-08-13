@@ -2,12 +2,12 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: {{ include "pagina_demo.fullname" . }}
+  name: {{ include "pagina-demo.fullname" . }}
 spec:
   host: {{ .Values.route.host }}
   to:
     kind: Service
-    name: {{ include "pagina_demo.fullname" . }}
+    name: {{ include "pagina-demo.fullname" . }}
   port:
     targetPort: 8080-tcp
   tls:
