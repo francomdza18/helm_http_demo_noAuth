@@ -6,6 +6,6 @@
 
 2) Modificar values.yaml y los archivos en templates/ para adaptarlo a tu aplicación.
 3) Verifica que el chart se renderiza correctamente.
-```helm template <name_helm> ./<name_helm>```
+```helm template <name-helm-release> ./<name_helm>```
 4) 
 5) 
