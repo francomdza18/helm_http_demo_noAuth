@@ -12,5 +12,5 @@ spec:
       targetPort: 8080
     - name: 8443-tcp
       protocol: TCP
-      port: 8443
-      targetPort: {{ .Values.service.port }}
+      port: {{ .Values.service.port }}
+      targetPort: 8443
