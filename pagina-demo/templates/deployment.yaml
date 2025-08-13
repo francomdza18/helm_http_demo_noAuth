@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "pagina-demo.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "pagina-demo.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "pagina-demo.name" . }}
+    spec:
+      containers:
+        - name: httpd
+          image: "{{ .Values.image.repository }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: html-volume
+              mountPath: /var/www/html/index.html
+              subPath: index.html
+            - name: html-volume
+              mountPath: /var/www/html/github_logo.png
+              subPath: github_logo.png
+
+      volumes:
+        - name: html-volume
+          configMap:
+            name: {{ include "pagina-demo.fullname" . }}-html
+
