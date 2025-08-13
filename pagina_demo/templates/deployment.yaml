@@ -23,8 +23,8 @@ spec:
               mountPath: /var/www/html/index.html
               subPath: index.html
             - name: html-volume
-              mountPath: /var/www/html/logo.png
-              subPath: logo.png
+              mountPath: /var/www/html/github_logo.png
+              subPath: github_logo.png
 
       volumes:
         - name: html-volume
