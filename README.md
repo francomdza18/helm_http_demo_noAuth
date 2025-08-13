@@ -1,6 +1,5 @@
 # Uso de HELM para desplegar una pagina web 
 > **NOTA:** El contenido de la pagina esta almacenado en un configmap, sin embargo, se puede crear una image personalizada y desplegar la app basandose en esa imagen.
-
 >⚠️ Este ejemplo está pensado para un repositorio público, por lo que no se requiere un archivo de autenticación.
 
 ---
