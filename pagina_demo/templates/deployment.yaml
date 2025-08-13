@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "pagina-web.fullname" . }}
+  name: {{ include "pagina_demo.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "pagina-web.name" . }}
+      app: {{ include "pagina_demo.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "pagina-web.name" . }}
+        app: {{ include "pagina_demo.name" . }}
     spec:
       containers:
-        - name: nginx
+        - name: httpd
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
           volumeMounts:
             - name: html-volume
-              mountPath: /usr/share/nginx/html/index.html
+              mountPath: /var/www/html/index.html
               subPath: index.html
             - name: html-volume
-              mountPath: /usr/share/nginx/html/logo.png
+              mountPath: /var/www/html/logo.png
               subPath: logo.png
 
       volumes:
         - name: html-volume
           configMap:
-            name: {{ include "pagina-web.fullname" . }}-html
+            name: {{ include "pagina_demo.fullname" . }}-html
 
