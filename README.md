@@ -10,7 +10,7 @@
 3) Verifica que el chart se renderiza correctamente.
 ```helm template <name-helm-release> ./<path-chart>```
 ---
-4) Haz loggin a openshift y situate en el projecto que desplegaras la app.
+4) Haz loggin a openshift y situate en el project donde desplegaras el Helm.
 ---
 5) Despliega el HELM
    ```helm install <name-helm-release> ./<path-chart>```
