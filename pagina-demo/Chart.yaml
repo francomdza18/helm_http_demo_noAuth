@@ -1,5 +1,5 @@
 apiVersion: v2
-name: pagina_demo
+name: pagina-demo
 description: Creacion de una pagina usando HELM
 
 # This is the chart version. This version number should be incremented each time you make changes
